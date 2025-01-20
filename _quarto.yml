@@ -1,5 +1,6 @@
 project:
   type: book
+  output-dir: _book
 
 book:
   title: "Don't Fence Me In"
@@ -27,14 +28,39 @@ book:
     - resources.qmd
     - solutions.qmd
     - academic-integrity.qmd
+  page-footer:
+    left: |
+      Don't Fence Me In by Barry Quinn
+    right: |
+      This book was built with <a href="https://quarto.org/">Quarto</a>
+  site-url: https://quinfer.github.io/encing
+  repo-url: https://github.com/quinfer/encing
+  repo-branch: main
+  repo-actions: [edit, issue]
 
 bibliography: references.bib
 
 format:
   html:
     theme: cosmo
+    code-link: true
   pdf:
     documentclass: scrreprt
 
+execute:
+  freeze: auto
+  warning: false
+  message: false
+  echo: true
+  eval: true
 
-
+packages:
+  - tidyverse
+  - tidyquant
+  - quantmod
+  - PerformanceAnalytics
+  - timetk
+  - lubridate
+  - scales
+  - ggthemes
+  - kableExtra

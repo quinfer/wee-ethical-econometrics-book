@@ -1,0 +1,20 @@
+Package: dontfencemein
+Title: Don't Fence Me In Book
+Version: 0.1
+Authors@R: 
+    person("Barry", "Quinn", , "first.last@example.com", role = c("aut", "cre"))
+Description: Book content
+License: CC BY-NC-SA 4.0
+Encoding: UTF-8
+Depends:
+    R (>= 4.1.0)
+Imports:
+    tidyverse,
+    tidyquant,
+    quantmod,
+    PerformanceAnalytics,
+    timetk,
+    lubridate,
+    scales,
+    ggthemes,
+    kableExtra
