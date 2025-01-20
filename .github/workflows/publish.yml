@@ -36,8 +36,11 @@ jobs:
 
       - name: Install Additional R Packages
         run: |
-          install.packages(c('tidyverse', 'tidyquant', 'quantmod', 'PerformanceAnalytics', 
-                           'timetk', 'lubridate', 'scales', 'ggthemes', 'kableExtra'))
+          install.packages(c(
+            'tidyverse', 'tidyquant', 'quantmod', 'PerformanceAnalytics', 
+            'timetk', 'lubridate', 'scales', 'ggthemes', 'kableExtra',
+            'janitor', 'rmarkdown', 'knitr', 'bookdown', 'htmltools'
+          ))
         shell: Rscript {0}
 
       - name: Render Book
