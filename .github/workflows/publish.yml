@@ -39,9 +39,10 @@ jobs:
           sudo apt-get install -y libcurl4-openssl-dev libssl-dev libxml2-dev libfontconfig1-dev libharfbuzz-dev libfribidi-dev
 
       - name: Install R Dependencies
-        uses: r-lib/actions/setup-renv@v2
-        with:
-          cache-version: 1
+        run: |
+            options(repos = c(CRAN = "https://cran.r-project.org"))
+            if (!requireNamespace("renv", quietly=TRUE)) install.packages("renv")
+        shell: Rscript {0}
 
       - name: Install Additional R Packages
         run: |
