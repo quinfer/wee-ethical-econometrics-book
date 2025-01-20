@@ -46,6 +46,7 @@ jobs:
 
       - name: Install Additional R Packages
         run: |
+          options(repos = c(CRAN = "https://cran.r-project.org"))
           install.packages(c(
             'tidyverse', 'tidyquant', 'quantmod', 'PerformanceAnalytics', 
             'timetk', 'lubridate', 'scales', 'ggthemes', 'kableExtra',
