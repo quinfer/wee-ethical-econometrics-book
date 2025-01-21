@@ -32,10 +32,11 @@ jobs:
 
       - name: Set Cran Mirror
         run: echo 'options(repos = c(CRAN = "https://cran.r-project.org"))' > ~/.Rprofile
-      
+ 
       - name: Install System Dependencies
         run: |
           sudo apt-get update
+          sudo apt-get install -y libjpeg-dev libfreetype6-dev libpng-dev libtiff5-dev
           sudo apt-get install -y libcurl4-openssl-dev libssl-dev libxml2-dev libfontconfig1-dev libharfbuzz-dev libfribidi-dev
 
       - name: Install R Dependencies
@@ -55,6 +56,8 @@ jobs:
           ))
           remotes::install_github("quinfer/tsfe")
         shell: Rscript {0}
+        env:
+          GITHUB_PAT: ${{ secrets.MY_GITHUB_PAT }}
 
       - name: Render Book
         run: |
