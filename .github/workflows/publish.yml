@@ -50,8 +50,10 @@ jobs:
           install.packages(c(
             'tidyverse', 'tidyquant', 'quantmod', 'PerformanceAnalytics', 
             'timetk', 'lubridate', 'scales', 'ggthemes', 'kableExtra',
-            'janitor', 'rmarkdown', 'knitr', 'bookdown', 'htmltools'
+            'janitor', 'rmarkdown', 'knitr', 'bookdown', 'htmltools',
+            'remotes'
           ))
+          remotes::install_github("quinfer/tsfe")
         shell: Rscript {0}
 
       - name: Render Book
