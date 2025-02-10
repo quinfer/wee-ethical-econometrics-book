@@ -32,6 +32,7 @@ R, with its exceptional array of packages and community support, stands at the f
 ```{r}
 # Install and load the dplyr package
 library(dplyr)
+library(lubridate)
 
 # Example: Simple data frame manipulation
 data <- data.frame(
@@ -103,37 +104,30 @@ appl<-tq_get(symbol, from = start_date, to = end_date)
 ::: callout-importants
 APIs (Application Programming Interfaces) and databases are crucial components in the realm of financial analytics for several reasons:
 
-1. **Real-Time Data Access (APIs):**
-   - APIs allow for the efficient retrieval of real-time financial data. This is essential for making timely decisions in markets where conditions can change rapidly.
-   - They enable the integration of live data feeds from stock exchanges, currency markets, and other financial institutions into analytics platforms.
-
-2. **Data Accuracy and Reliability (APIs):**
-   - Financial APIs often provide direct access to source data, reducing the risk of errors that can occur with manual data entry or scraping.
-   - They ensure consistency in data format, which is critical for accurate analysis.
-
-3. **Automation and Efficiency (APIs):**
-   - APIs facilitate automated data retrieval, which is much more efficient than manual processes. This automation is key in handling large volumes of data required for comprehensive financial analysis.
-   - They allow for the integration of different data sources, enabling a more holistic view of financial markets.
-
-4. **Data Storage and Management (Databases):**
-   - Databases provide a structured way to store large volumes of financial data. Efficient storage is crucial for handling the massive datasets often encountered in financial analysis.
-   - They allow for quick retrieval, manipulation, and analysis of data, supporting complex financial models and simulations.
-
-5. **Data Integrity and Security (Databases):**
-   - Properly managed databases ensure data integrity, meaning that the data is accurate, consistent, and reliable.
-   - They also provide security measures to protect sensitive financial data, which is critical given the confidentiality and regulatory compliance requirements in finance.
-
-6. **Historical Data Analysis (Databases):**
-   - Databases allow for the storage and analysis of historical financial data. This is essential for trend analysis, backtesting trading strategies, and understanding market cycles.
-   - Historical data is crucial for building predictive models in financial analytics.
-
-7. **Scalability and Flexibility (APIs and Databases):**
-   - Both APIs and databases offer scalability to handle increasing data volumes without loss of performance, which is vital in the ever-growing financial sector.
-   - They provide the flexibility to adapt to changing data requirements and analytics methodologies.
-
-8. **Integration with Analytical Tools (APIs and Databases):**
-   - APIs and databases can be easily integrated with various analytical tools and software used in financial analytics, such as Python, R, or specialized financial analysis platforms.
-   - This integration allows analysts to seamlessly import data into these tools for advanced statistical analysis, machine learning modeling, and other analytical techniques.
+1.  **Real-Time Data Access (APIs):**
+    -   APIs allow for the efficient retrieval of real-time financial data. This is essential for making timely decisions in markets where conditions can change rapidly.
+    -   They enable the integration of live data feeds from stock exchanges, currency markets, and other financial institutions into analytics platforms.
+2.  **Data Accuracy and Reliability (APIs):**
+    -   Financial APIs often provide direct access to source data, reducing the risk of errors that can occur with manual data entry or scraping.
+    -   They ensure consistency in data format, which is critical for accurate analysis.
+3.  **Automation and Efficiency (APIs):**
+    -   APIs facilitate automated data retrieval, which is much more efficient than manual processes. This automation is key in handling large volumes of data required for comprehensive financial analysis.
+    -   They allow for the integration of different data sources, enabling a more holistic view of financial markets.
+4.  **Data Storage and Management (Databases):**
+    -   Databases provide a structured way to store large volumes of financial data. Efficient storage is crucial for handling the massive datasets often encountered in financial analysis.
+    -   They allow for quick retrieval, manipulation, and analysis of data, supporting complex financial models and simulations.
+5.  **Data Integrity and Security (Databases):**
+    -   Properly managed databases ensure data integrity, meaning that the data is accurate, consistent, and reliable.
+    -   They also provide security measures to protect sensitive financial data, which is critical given the confidentiality and regulatory compliance requirements in finance.
+6.  **Historical Data Analysis (Databases):**
+    -   Databases allow for the storage and analysis of historical financial data. This is essential for trend analysis, backtesting trading strategies, and understanding market cycles.
+    -   Historical data is crucial for building predictive models in financial analytics.
+7.  **Scalability and Flexibility (APIs and Databases):**
+    -   Both APIs and databases offer scalability to handle increasing data volumes without loss of performance, which is vital in the ever-growing financial sector.
+    -   They provide the flexibility to adapt to changing data requirements and analytics methodologies.
+8.  **Integration with Analytical Tools (APIs and Databases):**
+    -   APIs and databases can be easily integrated with various analytical tools and software used in financial analytics, such as Python, R, or specialized financial analysis platforms.
+    -   This integration allows analysts to seamlessly import data into these tools for advanced statistical analysis, machine learning modeling, and other analytical techniques.
 
 In summary, APIs and databases are foundational to modern financial analytics, providing the necessary infrastructure for accessing, storing, managing, and analyzing financial data efficiently, accurately, and securely.
 :::
@@ -190,7 +184,7 @@ outliers <- which(abs(z_scores) > 3)
 
 #### Interquartile Range (IQR) Method
 
-The IQR method identifies outliers based on the spread of the data. Observations falling below Q1 - 1.5 * IQR or above Q3 + 1.5 * IQR are considered potential outliers, where Q1 and Q3 are the first and third quartiles, respectively.
+The IQR method identifies outliers based on the spread of the data. Observations falling below Q1 - 1.5 \* IQR or above Q3 + 1.5 \* IQR are considered potential outliers, where Q1 and Q3 are the first and third quartiles, respectively.
 
 ```{r}
 #| eval: false
@@ -300,7 +294,6 @@ corporate_data$Sector <- as.numeric(as.factor(corporate_data$DSSector))
 ```
 
 Here's what happens:
-
 
 1.  **Factor Conversion**: `as.factor(corporate_data$DSSector)` converts the `DSSector` column into a factor, grouping the data into distinct categories based on industry sector.
 

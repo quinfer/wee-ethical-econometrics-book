@@ -48,12 +48,32 @@ jobs:
       - name: Install Additional R Packages
         run: |
           options(repos = c(CRAN = "https://cran.r-project.org"))
-          install.packages(c(
-            'tidyverse', 'tidyquant', 'quantmod', 'PerformanceAnalytics', 
-            'timetk', 'lubridate', 'scales', 'ggthemes', 'kableExtra',
-            'janitor', 'rmarkdown', 'knitr', 'bookdown', 'htmltools',
+          required_packages <- c(
+            'tidyverse',      # includes ggplot2, dplyr, tidyr, etc.
+            'tidyquant', 
+            'quantmod', 
+            'PerformanceAnalytics', 
+            'timetk', 
+            'lubridate',      # explicitly include lubridate
+            'scales', 
+            'ggthemes', 
+            'kableExtra',
+            'janitor', 
+            'rmarkdown', 
+            'knitr', 
+            'bookdown', 
+            'htmltools',
             'remotes'
-          ))
+          )
+          
+          # Install all required packages
+          new_packages <- required_packages[!(required_packages %in% installed.packages()[,"Package"])]
+          if(length(new_packages)) install.packages(new_packages)
+          
+          # Verify all packages can be loaded
+          lapply(required_packages, library, character.only = TRUE)
+          
+          # Install GitHub packages
           remotes::install_github("quinfer/tsfe")
         shell: Rscript {0}
         env:
