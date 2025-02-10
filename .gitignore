@@ -1,5 +1,24 @@
-/.quarto/
-/_site/
-/_book/
-/.jupyter_cache/
+# R and Quarto build artifacts
+_book/
+_freeze/
 *.html
+*.pdf
+
+# R specific
+.Rhistory
+.RData
+.Rproj.user/
+
+# Python specific
+__pycache__/
+*.py[cod]
+
+# System files
+.DS_Store
+
+# Quarto cache
+.quarto/
+
+# Logs and temporary files
+*.log
+*.tmp
