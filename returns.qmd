@@ -281,7 +281,7 @@ Comparing implied volatility vs. historical volatility shows when options may be
 
 The VIX represents the market's consensus expectation for S&P 500 volatility over the next 30 days based on SPX option prices. Known as the "fear gauge," it enables trading volatility directly:
 
-```
+```         
 # Calculate VIX based on SPX option prices
 spx_calls <- getOptionChain("SPX") 
 call_prices <- spx_calls$lastPrice  
