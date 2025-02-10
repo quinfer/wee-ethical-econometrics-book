@@ -83,7 +83,7 @@ jobs:
 
       - name: Render Book
         run: |
-          quarto render chapters
+          quarto render
           ls -la _book
 
       - name: Setup Pages
