@@ -4,7 +4,7 @@ author: "Barry Quinn"
 editor: visual
 ---
 
-![](images/DALL·E 2024-01-29 16.56.33 - A humorous and illustrative image depicting the concept of "causal salad" in linear regression modeling. The scene is set in a chaotic kitchen, where .png)
+\![\](images/DALL·E 2024-01-29 16.56.33 - A humorous and illustrative image depicting the concept of "causal salad" in linear regression modeling. The scene is set in a chaotic kitchen, where .png)
 
 ## Perils of Causal Salad in Econometric Analysis
 
