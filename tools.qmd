@@ -33,7 +33,7 @@ R, with its exceptional array of packages and community support, stands at the f
 # Install and load the dplyr package
 library(dplyr)
 library(lubridate)
-
+library(shiny)
 # Example: Simple data frame manipulation
 data <- data.frame(
   stock_id = c(1, 2, 3, 4),

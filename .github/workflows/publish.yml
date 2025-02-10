@@ -63,7 +63,8 @@ jobs:
             'knitr', 
             'bookdown', 
             'htmltools',
-            'remotes'
+            'remotes',
+            'shiny'           # adding shiny package
           )
           
           # Install all required packages
