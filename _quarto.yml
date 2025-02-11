@@ -9,7 +9,7 @@ book:
   cover-image: "images/stable_diffusion_cover.png"
   date: '`r Sys.Date()`'
   chapters:
-    - chapters/index.qmd
+    - index.qmd
     - part: "Core Concepts"
       chapters:
         - chapters/primer.qmd
@@ -23,14 +23,13 @@ book:
         - chapters/multilevel.qmd
         - chapters/causal.qmd
         - chapters/colliderbias.qmd
-    - chapters/references.qmd
   appendices: 
     - chapters/resources.qmd
     - chapters/solutions.qmd
     - chapters/academic-integrity.qmd
   page-footer:
     left: |
-      Don't Fence Me In by Barry Quinn
+       "Copyright 2021, Norah Jones" 
     right: |
       This book was built with <a href="https://quarto.org/">Quarto</a>
   site-url: https://quinfer.github.io/encing

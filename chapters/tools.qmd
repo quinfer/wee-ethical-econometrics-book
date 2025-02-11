@@ -45,9 +45,9 @@ data <- data %>%
 
 ## Embracing the Future with Q-RaP
 
-Q-RaP[^tools-1] is not just a platform; it's a commitment to the future of financial data analytics. Hosted on [Posit Cloud](https://posit.cloud/learn/guide), this cloud-based architecture is our bridge to advanced, accessible analytics.
+Q-RaP[^1] is not just a platform; it's a commitment to the future of financial data analytics. Hosted on [Posit Cloud](https://posit.cloud/learn/guide), this cloud-based architecture is our bridge to advanced, accessible analytics.
 
-[^tools-1]: **Q**ueen's Business School **R**emote **a**nalytics **P**latform is a dedicated cloud computing architecture for teaching analytics to QBS students.
+[^1]: **Q**ueen's Business School **R**emote **a**nalytics **P**latform is a dedicated cloud computing architecture for teaching analytics to QBS students.
 
 **Posit Cloud: A New Era of Data Science**
 
@@ -289,7 +289,7 @@ Consider a corporate finance dataset which encodes financial statement informati
 
 ```{R}
 # Convert the 'Sector' categorical variable to a numeric format
-corporate_data <- readRDS("lspd2022.rds")
+corporate_data <- readRDS("../data/lspd2022.rds")
 corporate_data$Sector <- as.numeric(as.factor(corporate_data$DSSector))
 ```
 
@@ -439,34 +439,35 @@ By doing so, you create a new dataset with a single line per reporting period an
 
 2.  **Interactive Dashboards**: Building a simple Shiny dashboard to display stock data.
 
-```{r}
-    # Simple Shiny dashboard
-    library(shiny)
+``` r
+{r}
+# Simple Shiny dashboard
+library(shiny)
 
-    # UI layout
-    ui <- fluidPage(
-      titlePanel("Stock Price Dashboard"),
-      sidebarLayout(
-        sidebarPanel(
-          selectInput("stock", "Choose a Stock:", 
-                      choices = colnames(financial_data_wide))
-        ),
-        mainPanel(
-          plotOutput("stockPlot")
-        )
-      )
+# UI layout
+ui <- fluidPage(
+  titlePanel("Stock Price Dashboard"),
+  sidebarLayout(
+    sidebarPanel(
+      selectInput("stock", "Choose a Stock:", 
+                  choices = colnames(financial_data_wide))
+    ),
+    mainPanel(
+      plotOutput("stockPlot")
     )
+  )
+)
 
-    # Server logic
-    server <- function(input, output) {
-      output$stockPlot <- renderPlot({
-        plot(financial_data_wide[[input$stock]], type = 'l', 
-             main = paste("Stock", input$stock))
-      })
-    }
+# Server logic
+server <- function(input, output) {
+  output$stockPlot <- renderPlot({
+    plot(financial_data_wide[[input$stock]], type = 'l', 
+         main = paste("Stock", input$stock))
+  })
+}
 
-    # Run the app
-    shinyApp(ui = ui, server = server)
+# Run the app
+shinyApp(ui = ui, server = server)
 ```
 
 These examples demonstrate a basic workflow in R for financial data analysis, from data collection to interactive reporting. Remember, for complex financial analyses, more sophisticated techniques and careful consideration of financial theories and market behaviors are necessary.
@@ -706,16 +707,15 @@ Git is a distributed version control system that helps track changes in source c
 
 Note: These commands are run in a terminal or command line interface, not in the R console.
 
-``` shell
-# Navigate to your project directory
+*Navigate to your project directory*
 cd path/to/your/project
 
-# Initialise a new Git repository
+*Initialise a new Git repository*
 git init
 
-# Add a remote repository
+*Add a remote repository*
 git remote add origin https://github.com/yourusername/your-repository.git
-```
+
 
 ## Versioning with Git
 
@@ -729,16 +729,16 @@ Versioning is crucial in tracking the evolution of a project and facilitates rev
 
 ### Command line code example: Committing Changes
 
-```{shell}
-# Stage all changes for commit
+
+*Stage all changes for commit*
 git add .
 
-# Commit the changes with a message
+*Commit the changes with a message*
 git commit -m "Initial commit with financial analysis scripts"
 
-# Push the changes to GitHub
+*Push the changes to GitHub*
 git push origin master
-```
+
 
 ## Collaborative Workflows on GitHub
 
@@ -753,10 +753,10 @@ GitHub provides a platform for hosting repositories and enables collaborative wo
 
 To collaborate on an existing project, you would first clone the repository.
 
-```         
-# Clone a repository
+       
+*Clone a repository*
 git clone https://github.com/yourusername/your-repository.git
-```
+
 
 Git and GitHub are indispensable tools in the financial data scientist's arsenal. They not only provide a robust system for version control but also facilitate effective collaboration among team members, ensuring code integrity and consistency throughout the project lifecycle.
 

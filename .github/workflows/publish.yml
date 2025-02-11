@@ -81,6 +81,9 @@ jobs:
         env:
           GITHUB_PAT: ${{ secrets.MY_GITHUB_PAT }}
 
+      - name: List Chapters Directory
+        run: ls -la chapters
+
       - name: Render Book
         run: |
           quarto render
