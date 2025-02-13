@@ -52,7 +52,7 @@ jobs:
             'tidyverse',      # includes ggplot2, dplyr, tidyr, etc.
             'tidyquant', 
             'quantmod', 
-            'PerformanceAnalytics', 
+            'PortfolioAnalytics', 
             'timetk', 
             'lubridate',      # explicitly include lubridate
             'scales', 
@@ -65,7 +65,9 @@ jobs:
             'htmltools',
             'remotes',
             'shiny',           # adding shiny package
-            'sandwich'
+            'sandwich',
+            'forecast',
+            'ffp2'
             )
           
           # Install all required packages
