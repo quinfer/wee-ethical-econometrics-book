@@ -49,29 +49,29 @@ jobs:
         run: |
           options(repos = c(CRAN = "https://cran.r-project.org"))
           required_packages <- c(
-            'tidyverse',      # includes ggplot2, dplyr, tidyr, etc.
-        'tidyquant', 
-        'quantmod', 
-        'PortfolioAnalytics', 
-        'timetk', 
-        'lubridate',
-        'scales', 
-        'ggthemes', 
-        'kableExtra',
-        'janitor', 
-        'rmarkdown', 
-        'knitr', 
-        'bookdown', 
-        'htmltools',
-        'remotes',
-        'shiny',
-        'rugarch',
-        'sandwich',
-        'dlm',
-        'signal',
-        'dagitty',
-        'caret'
-            )
+            'tidyverse',      
+            'tidyquant', 
+            'quantmod', 
+            'PortfolioAnalytics', 
+            'timetk', 
+            'lubridate',
+            'scales', 
+            'ggthemes', 
+            'kableExtra',
+            'janitor', 
+            'rmarkdown', 
+            'knitr', 
+            'bookdown', 
+            'htmltools',
+            'remotes',
+            'shiny',
+            'rugarch',
+            'sandwich',
+            'dlm',
+            'signal',
+            'dagitty',
+            'caret'
+          )
           
           # Install all required packages
           new_packages <- required_packages[!(required_packages %in% installed.packages()[,"Package"])]
