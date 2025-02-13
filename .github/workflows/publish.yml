@@ -52,7 +52,6 @@ jobs:
             'tidyverse',      
             'tidyquant', 
             'quantmod', 
-            'PortfolioAnalytics', 
             'timetk', 
             'lubridate',
             'scales', 
