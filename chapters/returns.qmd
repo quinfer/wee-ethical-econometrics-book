@@ -2,7 +2,7 @@
 title: "Understanding Financial Data and Asset Returns"
 author: "Barry Quinn"
 editor: visual
-bibliography: references.bib
+bibliography: ../references.bib
 ---
 
 ![](images/logos/DALL·E%202024-01-18%2016.32.37%20-%20Create%20a%20professional%20logo%20for%20an%20advanced%20financial%20data%20analytics%20course.%20The%20design%20should%20be%20vibrant,%20with%20a%20medium%20level%20of%20detail,%20balancing%20com.png){width="30%" style="float: left; margin-right: 10px;"}

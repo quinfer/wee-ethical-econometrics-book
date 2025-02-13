@@ -2,164 +2,167 @@
 title: "Chapter solutions"
 author: "Barry Quinn"
 editor: visual
+embed-resources: true
+execute: 
+  eval: false
 ---
 
 ## Chapter 1: Statistics and Probability Primer
 
 1.  Calculating Stock Returns:
-    **Objective:** To calculate the annualized return of a stock over a three-year period.
-    **Solution:**
-    ```{R}
-    # Initial and final prices of the stock
-    initial_price <- 100
-    final_price <- 150
-    
-    # Investment period in years
-    years <- 3
-    
-    # Calculating the annualized return
-    annualized_return <- (final_price / initial_price)^(1/years) - 1
-    
-    # Output the annualized return
-    print(annualized_return)
-    ```
-    **Explanation:** The annualized return is calculated by finding the geometric average of the yearly return. It accounts for compounding over the period.
+**Objective:** To calculate the annualized return of a stock over a three-year period.
+**Solution:**
+```{r}
+# Initial and final prices of the stock
+initial_price <- 100
+final_price <- 150
+
+# Investment period in years
+years <- 3
+
+# Calculating the annualized return
+annualized_return <- (final_price / initial_price)^(1/years) - 1
+
+# Output the annualized return
+print(annualized_return)
+```
+**Explanation:** The annualized return is calculated by finding the geometric average of the yearly return. It accounts for compounding over the period.
 
 2.  Descriptive Statistics of Financial Data:
-    **Objective:** To summarize and interpret a dataset of stock prices.
-    **Solution:**
-    ```{R}
-    # Dataset of stock prices
-    stock_prices <- c(120, 125, 130, 128, 135)
-    
-    # Summary statistics
-    summary_stats <- summary(stock_prices)
-    
-    # Output the summary statistics
-    print(summary_stats)
-    ```
-    **Explanation:** `summary()` function in R provides a quick statistical summary of the data, including measures like minimum, first quartile, median, mean, third quartile, and maximum.
+**Objective:** To summarize and interpret a dataset of stock prices.
+**Solution:**
+```{r}
+# Dataset of stock prices
+stock_prices <- c(120, 125, 130, 128, 135)
+
+# Summary statistics
+summary_stats <- summary(stock_prices)
+
+# Output the summary statistics
+print(summary_stats)
+```
+**Explanation:** `summary()` function in R provides a quick statistical summary of the data, including measures like minimum, first quartile, median, mean, third quartile, and maximum.
 
 3.  Basic Risk Assessment:
-    **Objective:** To calculate and interpret the standard deviation of stock returns as a measure of risk.
-    **Solution:**
-    ```{R}
-    # Returns of a stock
-    stock_returns <- c(0.05, 0.02, -0.03, 0.04, 0.01)
-    
-    # Calculating standard deviation
-    risk_measure <- sd(stock_returns)
-    
-    # Output the standard deviation
-    print(risk_measure)
-    ```
-    **Explanation:** The standard deviation provides a measure of the dispersion of returns. A higher standard deviation implies greater risk (volatility) in the stock's returns.
+**Objective:** To calculate and interpret the standard deviation of stock returns as a measure of risk.
+**Solution:**
+```{r}
+# Returns of a stock
+stock_returns <- c(0.05, 0.02, -0.03, 0.04, 0.01)
+
+# Calculating standard deviation
+risk_measure <- sd(stock_returns)
+
+# Output the standard deviation
+print(risk_measure)
+```
+**Explanation:** The standard deviation provides a measure of the dispersion of returns. A higher standard deviation implies greater risk (volatility) in the stock's returns.
 
 4.  Simple Probability Calculation:
-    **Objective:** To calculate the probability of an event in a financial context, exemplified by a coin toss.
-    **Solution:**
-    ```{R}
-    # Probability of getting heads in a fair coin toss
-    probability_heads <- 1 / 2
-    
-    # Output the probability
-    print(probability_heads)
-    ```
-    **Explanation:** This is a basic example of classical probability, where each outcome (heads or tails) is equally likely.
+**Objective:** To calculate the probability of an event in a financial context, exemplified by a coin toss.
+**Solution:**
+```{r}
+# Probability of getting heads in a fair coin toss
+probability_heads <- 1 / 2
+
+# Output the probability
+print(probability_heads)
+```
+**Explanation:** This is a basic example of classical probability, where each outcome (heads or tails) is equally likely.
 
 5.  Basic Time Series Forecasting:
-    **Objective:** To use a simple moving average for forecasting the next data point in a financial time series.
-    **Solution:**
-    ```{R}
-    # Historical stock prices
-    stock_prices <- c(120, 122, 121, 123, 125)
-    
-    # Forecast using a simple moving average of the last 3 prices
-    forecast_price <- mean(tail(stock_prices, n=3))
-    
-    # Output the forecasted price
-    print(forecast_price)
-    ```
-    **Explanation:** This method forecasts the next data point by calculating the average of a specified number of the most recent data points (here, the last three prices).
+**Objective:** To use a simple moving average for forecasting the next data point in a financial time series.
+**Solution:**
+```{r}
+# Historical stock prices
+stock_prices <- c(120, 122, 121, 123, 125)
+
+# Forecast using a simple moving average of the last 3 prices
+forecast_price <- mean(tail(stock_prices, n=3))
+
+# Output the forecasted price
+print(forecast_price)
+```
+**Explanation:** This method forecasts the next data point by calculating the average of a specified number of the most recent data points (here, the last three prices).
 
 6.  Advanced Risk Modeling (VaR):
-    **Objective:** To calculate and interpret the Value at Risk (VaR) for a portfolio.
-    **Solution:**
-    ```{R}
-    # Historical returns of a portfolio
-    portfolio_returns <- c(-0.05, 0.1, 0.03, -0.02, 0.04)
-    
-    # Confidence level (e.g., 95%)
-    alpha <- 0.05
-    
-    # Calculating VaR
-    VaR <- quantile(portfolio_returns, alpha)
-    
-    # Output the VaR
-    print(VaR)
-    ```
-    **Explanation:** VaR measures the maximum expected loss over a given period under normal market conditions at a specified confidence level (here, 95%).
+**Objective:** To calculate and interpret the Value at Risk (VaR) for a portfolio.
+**Solution:**
+```{r}
+# Historical returns of a portfolio
+portfolio_returns <- c(-0.05, 0.1, 0.03, -0.02, 0.04)
+
+# Confidence level (e.g., 95%)
+alpha <- 0.05
+
+# Calculating VaR
+VaR <- quantile(portfolio_returns, alpha)
+
+# Output the VaR
+print(VaR)
+```
+**Explanation:** VaR measures the maximum expected loss over a given period under normal market conditions at a specified confidence level (here, 95%).
 
 7.  Bayesian Update in Stock Forecasting:
-    **Objective:** To perform a Bayesian update for a stock price prediction.
-    **Solution:**
-    ```{R}
-    # Uniform prior distribution
-    prior <- dbeta(1, 2, 1)
-    
-    # Binomial likelihood based on new evidence (e.g., 6 increases in 10 periods)
-    likelihood <- dbinom(6, size=10, prob=0.5)
-    
-    # Calculating the posterior distribution
-    posterior <- prior * likelihood
-    
-    # Output the posterior probability
-    print(posterior)
-    ```
-    **Explanation:** Bayesian update combines prior belief (uniform distribution in this case) with new evidence (likelihood) to revise the belief about a stock's price movement.
+**Objective:** To perform a Bayesian update for a stock price prediction.
+**Solution:**
+```{r}
+# Uniform prior distribution
+prior <- dbeta(1, 2, 1)
+
+# Binomial likelihood based on new evidence (e.g., 6 increases in 10 periods)
+likelihood <- dbinom(6, size=10, prob=0.5)
+
+# Calculating the posterior distribution
+posterior <- prior * likelihood
+
+# Output the posterior probability
+print(posterior)
+```
+**Explanation:** Bayesian update combines prior belief (uniform distribution in this case) with new evidence (likelihood) to revise the belief about a stock's price movement.
 
 8.  Hypothesis Testing in Financial Returns:
-    **Objective:** To conduct and interpret a hypothesis test comparing a new investment strategy to market returns.
-    **Solution:**
-    ```{R}
-    # Returns from a new investment strategy
-    strategy_returns <- c(0.07, 0.08, 0.09, 0.06, 0.1)
-    
-    # Market average returns for comparison
-    market_returns <- c(0.05, 0.05, 0.05, 0.05, 0.05)
-    
-    # Performing a t-test
-    t_test_result <- t.test(strategy_returns, market_returns)
-    
-    # Output the t-test results
-    print(t_test_result)
-    ```
-    **Explanation:** The t-test assesses whether the mean returns of the new strategy are significantly different from the market average. The p-value indicates the probability of observing such a difference if there were no real difference.
+**Objective:** To conduct and interpret a hypothesis test comparing a new investment strategy to market returns.
+**Solution:**
+```{r}
+# Returns from a new investment strategy
+strategy_returns <- c(0.07, 0.08, 0.09, 0.06, 0.1)
+
+# Market average returns for comparison
+market_returns <- c(0.05, 0.05, 0.05, 0.05, 0.05)
+
+# Performing a t-test
+t_test_result <- t.test(strategy_returns, market_returns)
+
+# Output the t-test results
+print(t_test_result)
+```
+**Explanation:** The t-test assesses whether the mean returns of the new strategy are significantly different from the market average. The p-value indicates the probability of observing such a difference if there were no real difference.
 
 9.  Complex Time Series Analysis:
-    **Objective:** To fit an ARIMA model to a financial time series and forecast future values.
-    **Solution:**
-    ```{R}
-    # Assuming stock_prices is a time series object
-    # Install and load the forecast package
-    library(forecast)
-    
-    # Fitting an ARIMA model
-    arima_model <- auto.arima(stock_prices)
-    
-    # Forecasting the next value
-    forecast_result <- forecast(arima_model, h=1)
-    
-    # Output the forecast
-    print(forecast_result)
-    ```
-    **Explanation:** `auto.arima()` function automatically selects the best ARIMA model for the time series data. The `forecast()` function then uses this model to predict future values (here, the forecast horizon is 1).
+**Objective:** To fit an ARIMA model to a financial time series and forecast future values.
+**Solution:**
+```{r}
+# Assuming stock_prices is a time series object
+# Install and load the forecast package
+library(forecast)
+
+# Fitting an ARIMA model
+arima_model <- auto.arima(stock_prices)
+
+# Forecasting the next value
+forecast_result <- forecast(arima_model, h=1)
+
+# Output the forecast
+print(forecast_result)
+```
+**Explanation:** `auto.arima()` function automatically selects the best ARIMA model for the time series data. The `forecast()` function then uses this model to predict future values (here, the forecast horizon is 1).
 
 10. Portfolio Optimization:
 The Markowitz model involves optimizing a portfolio by finding the best combination of assets that minimizes risk (variance) for a given expected return, or maximizes return for a given level of risk. This is achieved by adjusting the weights of each asset in the portfolio.
 
 **Solution:**
-```{R}
+```{r}
 # Load the quadprog library for quadratic programming
 library(quadprog)
 
@@ -170,9 +173,9 @@ dates <- seq.Date(from = start_date, by = "day", length.out = N)
 
 # Define the historical returns for four assets
 historical_returns <- data.frame("Asset1"=rnorm(N, mean = 0.04),                                  
-                                 "Asset2"=rnorm(N, mean = 0.03),                                 
-                                 "Asset3"=rnorm(N, mean = 0.09),                                 
-                                 "Asset4"=rnorm(N, mean = 0.01))
+                          "Asset2"=rnorm(N, mean = 0.03),                                 
+                          "Asset3"=rnorm(N, mean = 0.09),                                 
+                          "Asset4"=rnorm(N, mean = 0.01))
 rownames(historical_returns) <- dates
 
 # Calculate the covariance matrix of returns
@@ -198,23 +201,23 @@ print(optimal_weights)
 **Interpretation**
 
 1.  **Setting Up the Data**:    
-    -   The code first sets up a simulated historical return data for four assets over ten days. This is necessary as the Markowitz model requires historical return data to calculate asset weights.
+-   The code first sets up a simulated historical return data for four assets over ten days. This is necessary as the Markowitz model requires historical return data to calculate asset weights.
 
 2.  **Covariance Matrix**:    
-    -   `Dmat` is calculated as the covariance matrix of the asset returns. It represents the risk relationships between each pair of assets, crucial in determining how asset prices move relative to each other.
+-   `Dmat` is calculated as the covariance matrix of the asset returns. It represents the risk relationships between each pair of assets, crucial in determining how asset prices move relative to each other.
 
 3.  **Defining Optimization Parameters**:    
-    -   The vector `dvec` is set to zero since the goal is to minimize variance without targeting a specific return.    
-    -   `Amat` combines an equality constraint (that the sum of the asset weights equals 1) with non-negativity constraints (each asset weight must be zero or positive).
+-   The vector `dvec` is set to zero since the goal is to minimize variance without targeting a specific return.    
+-   `Amat` combines an equality constraint (that the sum of the asset weights equals 1) with non-negativity constraints (each asset weight must be zero or positive).
 
 4.  **Quadratic Programming Problem**:    
-    -   The `solve.QP` function is used to solve the quadratic programming problem. It aims to find the asset weights that minimize the overall portfolio variance subject to the given constraints.
+-   The `solve.QP` function is used to solve the quadratic programming problem. It aims to find the asset weights that minimize the overall portfolio variance subject to the given constraints.
 
 5.  **Optimal Weights**:    
-    -   The solution `sol$solution` provides the optimal weights for each asset. These weights represent how much of the portfolio should be allocated to each asset to achieve minimum risk.
+-   The solution `sol$solution` provides the optimal weights for each asset. These weights represent how much of the portfolio should be allocated to each asset to achieve minimum risk.
 
 6.  **Result**:    
-    -   The output is a set of portfolio weights that minimize the portfolio's variance (risk), considering the historical return covariance of the assets and the constraints (total weight equals 1, non-negative weights). This represents the most risk-efficient allocation of assets in the portfolio under the given conditions.
+-   The output is a set of portfolio weights that minimize the portfolio's variance (risk), considering the historical return covariance of the assets and the constraints (total weight equals 1, non-negative weights). This represents the most risk-efficient allocation of assets in the portfolio under the given conditions.
 
 ::: callout-important
 These solutions provide a mix of conceptual explanations and practical R code, offering a comprehensive understanding of each question's objective and methodology.
@@ -226,104 +229,105 @@ These solutions provide a mix of conceptual explanations and practical R code, o
 *Easier:*
 
 1.  **R's Role in Financial Analysis:**    
-    -   Solution: R offers extensive packages for statistical analysis and data handling, making it ideal for analyzing complex financial data. Its powerful graphical capabilities enable clear visualization of financial trends and patterns.
+-   Solution: R offers extensive packages for statistical analysis and data handling, making it ideal for analyzing complex financial data. Its powerful graphical capabilities enable clear visualization of financial trends and patterns.
 
 2.  **Advantages of Cloud Computing in Finance:**    
-    -   Solution: Cloud platforms like Posit Cloud provide scalability, easy access to advanced analytics tools, and collaborative features, essential for handling large datasets and complex financial models.
+-   Solution: Cloud platforms like Posit Cloud provide scalability, easy access to advanced analytics tools, and collaborative features, essential for handling large datasets and complex financial models.
 
 3.  **Data Visualization Importance:**    
-    -   Solution: Data visualization is key in financial analysis for interpreting complex data sets and communicating findings effectively. `ggplot2` offers a versatile, layer-based plotting system, making complex visualizations more intuitive.
+-   Solution: Data visualization is key in financial analysis for interpreting complex data sets and communicating findings effectively. `ggplot2` offers a versatile, layer-based plotting system, making complex visualizations more intuitive.
 
 4.  **Version Control with Git:**    
-    -   Solution: Version control is crucial for managing changes in code, especially in collaborative projects. Git allows tracking of changes, reverting to previous versions, and effective team collaboration.
+-   Solution: Version control is crucial for managing changes in code, especially in collaborative projects. Git allows tracking of changes, reverting to previous versions, and effective team collaboration.
 
 5.  **Growth Mindset in Data Science:**    
-    -   Solution: A growth mindset encourages continual learning and adaptability, crucial in a field like financial data analytics, where technologies and market conditions are constantly evolving.
+-   Solution: A growth mindset encourages continual learning and adaptability, crucial in a field like financial data analytics, where technologies and market conditions are constantly evolving.
 
 *Advanced:*
 
 6.  **Statistical vs. Machine Learning Approaches:**    
-    -   Solution: Statistical modeling typically involves hypothesis-driven models, while machine learning focuses on prediction using data-driven models. Both approaches are valuable in financial data analysis, each with strengths in different scenarios.
+-   Solution: Statistical modeling typically involves hypothesis-driven models, while machine learning focuses on prediction using data-driven models. Both approaches are valuable in financial data analysis, each with strengths in different scenarios.
 
 7.  **Reproducibility Challenges:**    
-    -   Solution: Challenges include data accessibility, software environment consistency, and clear documentation. Solutions involve using version control, containerization tools, and comprehensive documentation of analysis steps.
+-   Solution: Challenges include data accessibility, software environment consistency, and clear documentation. Solutions involve using version control, containerization tools, and comprehensive documentation of analysis steps.
 
 8.  **Collaborative Coding with Git and GitHub:**    
-    -   Solution: Git and GitHub facilitate version control, issue tracking, and code review, supporting a collaborative workflow. This ensures code integrity and effective team collaboration in financial analysis projects.
+-   Solution: Git and GitHub facilitate version control, issue tracking, and code review, supporting a collaborative workflow. This ensures code integrity and effective team collaboration in financial analysis projects.
 
 9.  **Tidyverse Ecosystem:**    
-    -   Solution: The Tidyverse provides a consistent and user-friendly syntax for data import, cleaning, manipulation, and visualization, streamlining the data analysis process and enhancing productivity in financial data analytics.
+-   Solution: The Tidyverse provides a consistent and user-friendly syntax for data import, cleaning, manipulation, and visualization, streamlining the data analysis process and enhancing productivity in financial data analytics.
 
 10. **Modular Coding for Financial Analysis:**    
-    -   Solution: Modular coding in R improves code readability, reusability, and testing. In financial analysis, where models can be complex, this approach enables easier maintenance and collaboration.
+-   Solution: Modular coding in R improves code readability, reusability, and testing. In financial analysis, where models can be complex, this approach enables easier maintenance and collaboration.
 
 **Practical Questions Solutions:**
 *Easier:*
 
 1.  **Basic R Data Manipulation:**
-    ```{r}
-    #| eval: false
-    data <- data %>% mutate(percent_change = (stock_price - lag(stock_price)) / lag(stock_price) * 100)
-    ```
-    Interpretation: Percentage change helps identify trends in stock prices, indicating potential growth or decline.
+```{r}
+#| eval: false
+data <- data %>% mutate(percent_change = (stock_price - lag(stock_price)) / lag(stock_price) * 100)
+```
+Interpretation: Percentage change helps identify trends in stock prices, indicating potential growth or decline.
 
 2.  **Creating Plots in R:**
-    ```{r}     
-    #| eval: false
-    ggplot(data, aes(x = date, y = stock_price)) + geom_line()
-    ```
-    `Interpretation: Line charts provide a clear view of stock price trends over time, aiding in investment decisions.
+```{r}     
+#| eval: false
+ggplot(data, aes(x = date, y = stock_price)) + geom_line()
+```
+`Interpretation: Line charts provide a clear view of stock price trends over time, aiding in investment decisions.
 
 3.  **Git Basics:**
-    Commands: `git init`, `git add .`, `git commit -m "Initial commit"`
-    Benefits: Ensures code versioning, allows tracking of changes, and facilitates team collaboration.
+Commands: `git init`, `git add .`, `git commit -m "Initial commit"`
+Benefits: Ensures code versioning, allows tracking of changes, and facilitates team collaboration.
 
 4.  **Data Cleaning in R:**
-    ```{r}
-    #| eval: false    
-    data <- data %>% mutate(stock_price = ifelse(is.na(stock_price), mean(stock_price, na.rm = TRUE), stock_price))
-    ```
-    Implications: Handling missing data prevents biases and errors in financial analysis.
+```{r}
+#| eval: false    
+data <- data %>% mutate(stock_price = ifelse(is.na(stock_price), mean(stock_price, na.rm = TRUE), stock_price))
+```
+Implications: Handling missing data prevents biases and errors in financial analysis.
 
 5.  **Basic Linear Regression in R:**
-    ```{r}
-    #| eval: false  
-    model <- lm(stock_price ~ stock_id, data = data)
-    summary(model)
-    ```
-    Interpretation: The model provides insights into how stock prices are related to their IDs, which could correlate with other financial factors.
+```{r}
+#| eval: false  
+model <- lm(stock_price ~ stock_id, data = data)
+summary(model)
+```
+Interpretation: The model provides insights into how stock prices are related to their IDs, which could correlate with other financial factors.
 
 *Advanced:*
 
 6.  **Advanced Financial Modeling:**
-    ```{r}
-    #| eval: false
-    model <- auto.arima(stock_data$stock_price)
-    forecast(model)
-    ```
-    Assumptions: Assumes stock prices follow an ARIMA process. Limitations include potential overfitting and sensitivity to data anomalies.
+
+```{r}
+#| eval: false
+model <- auto.arima(stock_data$stock_price)
+forecast(model)
+```
+Assumptions: Assumes stock prices follow an ARIMA process. Limitations include potential overfitting and sensitivity to data anomalies.
 
 7.  **Machine Learning Application:**
-    ```{r}
-    #| eval: false
-    model <- train(stock_price ~ ., data = stock_data, method = "rf")
-    ```
-    Choice and Effectiveness: Random Forest is chosen for its ability to handle non-linear relationships in data, useful in complex financial markets.
+```{r}
+#| eval: false
+model <- train(stock_price ~ ., data = stock_data, method = "rf")
+```
+Choice and Effectiveness: Random Forest is chosen for its ability to handle non-linear relationships in data, useful in complex financial markets.
 
 8.  **Reproducible Analysis with Quarto:**
-    Use Quarto to create a document that combines R code for financial analysis, outputs, and narrative.
-    Importance: Ensures that financial analyses can be reliably reproduced and verified.
+Use Quarto to create a document that combines R code for financial analysis, outputs, and narrative.
+Importance: Ensures that financial analyses can be reliably reproduced and verified.
 
 9.  **Tidyverse for Complex Data Manipulation:**
-    ``` {r}
-    #| eval: false
-    stock_data %>% group_by(stock_id) %>% summarize(average_price = mean(stock_price))
-    ```
-    Benefit: This manipulation provides insights into the average performance of each stock, crucial for portfolio analysis.
+``` {r}
+#| eval: false
+stock_data %>% group_by(stock_id) %>% summarize(average_price = mean(stock_price))
+```
+Benefit: This manipulation provides insights into the average performance of each stock, crucial for portfolio analysis.
 
 10. **Collaborative Financial Project using GitHub:**
-    Workflow: Clone a repository, create branches for features, use pull requests for merging.
-    Benefits: Enhances collaboration, ensures code review, and maintains project organization.
+Workflow: Clone a repository, create branches for features, use pull requests for merging.
+Benefits: Enhances collaboration, ensures code review, and maintains project organization.
 
 These solutions offer a comprehensive understanding of both the theoretical concepts and practical applications in financial data analytics using R and related tools.
 
@@ -332,7 +336,7 @@ These solutions offer a comprehensive understanding of both the theoretical conc
 Here are the R coded solutions with detailed explanations for each exercise:
 
 Exercise 1:
-```{R}
+```{r}
 # Install and load necessary packages
 library(tidyquant)
 
@@ -345,11 +349,11 @@ daily_returns <- (closing_prices - lag(closing_prices)) / lag(closing_prices)
 
 # Plot the closing prices over time
 plot(closing_prices, main = "Apple Inc. (AAPL) Closing Prices",
-     xlab = "Time", ylab = "Price", col = "blue")
+xlab = "Time", ylab = "Price", col = "blue")
 
 # Plot the daily returns over time     
 plot(daily_returns, main = "Apple Inc. (AAPL) Daily Returns",
-     xlab = "Time", ylab = "Return", col = "red")
+xlab = "Time", ylab = "Return", col = "red")
 ```
 
 Explanation:
@@ -365,7 +369,7 @@ Explanation:
 - The plots help identify trends, seasonality, or unusual patterns in the price and return series.
 
 Exercise 2:
-```{R}
+```{r}
 library(signal)
 
 # Apply smoothing techniques
@@ -376,13 +380,13 @@ lowess_smoothed <- lowess(closing_prices)
 
 # Plot the original price series and smoothed series
 plot(closing_prices, main = "Apple Inc. (AAPL) Closing Prices with Smoothing",
-     xlab = "Time", ylab = "Price", col = "black")
+xlab = "Time", ylab = "Price", col = "black")
 lines(sma_20, col = "blue")
 lines(ema_0.1, col = "red")
 lines(sg_filtered, col = "green")
 lines(lowess_smoothed$y, col = "purple")
 legend("topleft", legend = c("Original", "SMA (20)", "EMA (0.1)", "Savitzky-Golay", "Lowess"),
-       col = c("black", "blue", "red", "green", "purple"), lty = 1)
+col = c("black", "blue", "red", "green", "purple"), lty = 1)
 ```
 
 Explanation:
@@ -394,7 +398,7 @@ Explanation:
 - The differences between the smoothing methods and their effectiveness in capturing the underlying trend can be observed from the plot.
 
 Exercise 3:
-```{R}
+```{r}
 library(tseries)
 library(tidyverse)
 
@@ -404,11 +408,11 @@ print(adf_test)
 
 # If non-stationary, apply differencing
 if (adf_test$p.value > 0.05) {
-  differenced_prices <- diff(closing_prices)
-  # remove NAs from differenced series
-  differenced_prices <- na.omit(differenced_prices)
-  adf_test_diff <- adf.test(differenced_prices)
-  print(adf_test_diff)
+differenced_prices <- diff(closing_prices)
+# remove NAs from differenced series
+differenced_prices <- na.omit(differenced_prices)
+adf_test_diff <- adf.test(differenced_prices)
+print(adf_test_diff)
 }
 ```
 
@@ -419,7 +423,7 @@ Explanation:
 - The ADF test is performed again on the differenced series to confirm stationarity.
 
 Exercise 4:
-```{R}
+```{r}
 # Fit an ARIMA model
 arima_model <- auto.arima(closing_prices)
 print(summary(arima_model))
@@ -427,7 +431,7 @@ print(summary(arima_model))
 # Forecast the next 30 days
 forecast_30 <- forecast(arima_model, h = 30)
 plot(forecast_30, main = "ARIMA Forecast for Apple Inc. (AAPL) Closing Prices",
-     xlab = "Time", ylab = "Price")
+xlab = "Time", ylab = "Price")
 ```
 
 Explanation:
@@ -437,17 +441,17 @@ Explanation:
 - The forecasted values are plotted along with the original price series using the `plot()` function.
 
 Exercise 5:
-```{R}
+```{r}
 # Install and load necessary packages
 library(rugarch)
 
 # Specify the GARCH(1,1) model
 spec <- ugarchspec(mean.model = list(armaOrder = c(0, 0)),
-                   variance.model = list(garchOrder = c(1, 1),
-                                         model = "sGARCH",
-                                        submodel = NULL),
-                   distribution.model = "norm",
-                   fixed.pars = list(mu = 0, omega = 0.1, alpha1 = 0.1, beta1 = 0.8))
+            variance.model = list(garchOrder = c(1, 1),
+                                  model = "sGARCH",
+                                submodel = NULL),
+            distribution.model = "norm",
+            fixed.pars = list(mu = 0, omega = 0.1, alpha1 = 0.1, beta1 = 0.8))
 
 # Simulate a GARCH(1,1) process
 garch_sim <- ugarchpath(spec, n.sim = 1000, m.sim = 1)
@@ -478,7 +482,8 @@ By providing the parameter values directly using `fixed.pars`, you ensure that t
 Remember to adjust the parameter values according to your specific requirements and the characteristics of your GARCH process.
 
 Exercise 6:
-```{R}
+
+```{r}
 # Download historical stock prices for two related companies
 library(tidyquant)
 aapl_data <- tq_get("AAPL", from = "2018-01-01", to = "2023-12-31")
@@ -495,8 +500,8 @@ summary(coint_test)
 
 # Estimate a VECM if cointegration is found
 if (coint_test@teststat[1] > coint_test@cval[1,2]) {
-  vecm_model <- cajorls(coint_test, r = 1)
-  print(summary(vecm_model$rlm))
+vecm_model <- cajorls(coint_test, r = 1)
+print(summary(vecm_model$rlm))
 }
 ```
 
@@ -509,7 +514,8 @@ Explanation:
 - The summary of the VECM is printed for interpretation.
 
 Exercise 7:
-```{R}
+
+```{r}
 # Conduct Granger causality test
 library(lmtest)
 grangertest(aapl_prices ~ msft_prices, order = 1)
@@ -523,7 +529,8 @@ Explanation:
 - The test results provide insights into the lead-lag relationship between the two stocks and their implications for investment and risk management strategies.
 
 Exercise 8:
-```{R}
+
+```{r}
 # Simulate a random walk process
 set.seed(123)
 n_steps <- length(closing_prices)
@@ -538,62 +545,62 @@ sim_prices <- initial_price * exp(cumsum(returns))
 
 # Plot the simulated price series
 plot(sim_prices, type = "l", main = "Simulated Random Walk Process",
-     xlab = "Time", ylab = "Price")
+xlab = "Time", ylab = "Price")
 
 # Calculate daily returns
 sim_returns <- diff(log(sim_prices))
 ```
 
-```{R}
+```{r}
 library(ggplot2)
 
 # Compare with real stock price data
 price_data <- data.frame(Time = 1:length(closing_prices[1:length(sim_prices)]),
-                         Real = as.numeric(closing_prices[1:length(sim_prices)]),
-                         Simulated = as.numeric(sim_prices))
+                  Real = as.numeric(closing_prices[1:length(sim_prices)]),
+                  Simulated = as.numeric(sim_prices))
 
 ggplot(data = price_data, aes(x = Time)) +
-  geom_line(aes(y = Real, color = "Real"), linewidth = 1) +
-  geom_line(aes(y = Simulated, color = "Simulated"), linewidth = 1) +
-  scale_color_manual(values = c("Real" = "blue", "Simulated" = "red")) +
-  labs(title = "Comparison of Real and Simulated Price Series",
-       x = "Time",
-       y = "Price") +
-  theme_minimal()
+geom_line(aes(y = Real, color = "Real"), linewidth = 1) +
+geom_line(aes(y = Simulated, color = "Simulated"), linewidth = 1) +
+scale_color_manual(values = c("Real" = "blue", "Simulated" = "red")) +
+labs(title = "Comparison of Real and Simulated Price Series",
+x = "Time",
+y = "Price") +
+theme_minimal()
 
 # Compare return distributions
 return_data <- data.frame(Return = c(daily_returns, sim_returns),
-                          Type = c(rep("Real", length(daily_returns)),
-                                   rep("Simulated", length(sim_returns))))
+                  Type = c(rep("Real", length(daily_returns)),
+                            rep("Simulated", length(sim_returns))))
 
 ggplot(data = return_data, aes(x = Return, fill = Type)) +
-  geom_histogram(aes(y = ..density..), alpha = 0.7, position = "identity", bins = 30) +
-  geom_density(alpha = 0.5) +
-  scale_fill_manual(values = c("Real" = "blue", "Simulated" = "red")) +
-  labs(title = "Comparison of Return Distributions",
-       x = "Return",
-       y = "Density") +
-  facet_wrap(~ Type, ncol = 2) +
-  theme_minimal()
+geom_histogram(aes(y = ..density..), alpha = 0.7, position = "identity", bins = 30) +
+geom_density(alpha = 0.5) +
+scale_fill_manual(values = c("Real" = "blue", "Simulated" = "red")) +
+labs(title = "Comparison of Return Distributions",
+x = "Return",
+y = "Density") +
+facet_wrap(~ Type, ncol = 2) +
+theme_minimal()
 ```
 
 Explanation:
 1. Price Series Comparison:
-   - We create a data frame `price_data` that contains the time index, real prices, and simulated prices.
-   - Using `ggplot()`, we create a line plot with the time index on the x-axis and the price values on the y-axis.
-   - We add two `geom_line()` layers to plot the real prices (in blue) and simulated prices (in red).
-   - We set the colors manually using `scale_color_manual()` and provide appropriate labels using `labs()`.
-   - Finally, we apply the `theme_minimal()` theme for a cleaner plot appearance.
+- We create a data frame `price_data` that contains the time index, real prices, and simulated prices.
+- Using `ggplot()`, we create a line plot with the time index on the x-axis and the price values on the y-axis.
+- We add two `geom_line()` layers to plot the real prices (in blue) and simulated prices (in red).
+- We set the colors manually using `scale_color_manual()` and provide appropriate labels using `labs()`.
+- Finally, we apply the `theme_minimal()` theme for a cleaner plot appearance.
 
 2. Return Distributions Comparison:
-   - We create a data frame `return_data` that combines the real returns and simulated returns, along with a type indicator.
-   - Using `ggplot()`, we create a histogram plot with the return values on the x-axis and the density on the y-axis.
-   - We use `geom_histogram()` to plot the histograms, with `..density..` mapping to show the density instead of count.
-   - We set `alpha` to 0.7 for transparency and `position = "identity"` to overlay the histograms.
-   - We add a `geom_density()` layer to display the density curves on top of the histograms.
-   - We set the fill colors manually using `scale_fill_manual()`.
-   - We use `facet_wrap()` to create separate panels for the real and simulated return distributions.
-   - Finally, we apply the `theme_minimal()` theme for a cleaner plot appearance.
+- We create a data frame `return_data` that combines the real returns and simulated returns, along with a type indicator.
+- Using `ggplot()`, we create a histogram plot with the return values on the x-axis and the density on the y-axis.
+- We use `geom_histogram()` to plot the histograms, with `..density..` mapping to show the density instead of count.
+- We set `alpha` to 0.7 for transparency and `position = "identity"` to overlay the histograms.
+- We add a `geom_density()` layer to display the density curves on top of the histograms.
+- We set the fill colors manually using `scale_fill_manual()`.
+- We use `facet_wrap()` to create separate panels for the real and simulated return distributions.
+- Finally, we apply the `theme_minimal()` theme for a cleaner plot appearance.
 
 The resulting plots will show the comparison of the real and simulated price series over time, as well as the comparison of their return distributions side by side.
 
@@ -609,7 +616,7 @@ Explanation:
 
 Exercise 9: Backtesting ARMA Models:
 
-```R
+```{r}
 library(quantmod)
 library(forecast)
 
@@ -637,16 +644,16 @@ mae_rolling <- c()
 rmse_rolling <- c()
 
 for (i in seq_along(test_data)) {
-  if (i < window_size) next
-  
-  train_data_rolling <- prices[(i - window_size + 1):(i - 1)]
-  test_data_rolling <- prices[i]
-  
-  model_rolling <- arima(train_data_rolling, order = c(1, 0, 1))
-  prediction_rolling <- forecast(model_rolling, h = 1)
-  
-  mae_rolling <- c(mae_rolling, abs(test_data_rolling - prediction_rolling$mean[1]))
-  rmse_rolling <- c(rmse_rolling, (test_data_rolling - prediction_rolling$mean[1])^2)
+if (i < window_size) next
+
+train_data_rolling <- prices[(i - window_size + 1):(i - 1)]
+test_data_rolling <- prices[i]
+
+model_rolling <- arima(train_data_rolling, order = c(1, 0, 1))
+prediction_rolling <- forecast(model_rolling, h = 1)
+
+mae_rolling <- c(mae_rolling, abs(test_data_rolling - prediction_rolling$mean[1]))
+rmse_rolling <- c(rmse_rolling, (test_data_rolling - prediction_rolling$mean[1])^2)
 }
 
 # Compare static and rolling window approaches
@@ -661,7 +668,7 @@ cat("RMSE:", sqrt(mean(rmse_rolling)), "\n")
 
 Excercise 10: Cross-Validating GARCH Models:
 
-```R
+```{r}
 library(quantmod)
 library(rugarch)
 
@@ -671,40 +678,40 @@ returns <- diff(log(Cl(AAPL)))
 
 # Define the time series cross-validation function
 ts_cv <- function(data, n_splits, model_func) {
-  n <- length(data)
-  split_size <- floor(n / n_splits)
-  
-  mse_scores <- c()
-  mae_scores <- c()
-  
-  for (i in 1:(n_splits - 1)) {
-    train_start <- (i - 1) * split_size + 1
-    train_end <- i * split_size
-    test_start <- train_end + 1
-    test_end <- min(test_start + split_size - 1, n)
-    
-    train_data <- data[train_start:train_end]
-    test_data <- data[test_start:test_end]
-    
-    model <- model_func(train_data)
-    predictions <- predict(model, n.ahead = length(test_data), cond.dist = "norm")
-    
-    mse <- mean((test_data - predictions$mean)^2)
-    mae <- mean(abs(test_data - predictions$mean))
-    
-    mse_scores <- c(mse_scores, mse)
-    mae_scores <- c(mae_scores, mae)
-  }
-  
-  return(list(mse = mean(mse_scores), mae = mean(mae_scores)))
+n <- length(data)
+split_size <- floor(n / n_splits)
+
+mse_scores <- c()
+mae_scores <- c()
+
+for (i in 1:(n_splits - 1)) {
+train_start <- (i - 1) * split_size + 1
+train_end <- i * split_size
+test_start <- train_end + 1
+test_end <- min(test_start + split_size - 1, n)
+
+train_data <- data[train_start:train_end]
+test_data <- data[test_start:test_end]
+
+model <- model_func(train_data)
+predictions <- predict(model, n.ahead = length(test_data), cond.dist = "norm")
+
+mse <- mean((test_data - predictions$mean)^2)
+mae <- mean(abs(test_data - predictions$mean))
+
+mse_scores <- c(mse_scores, mse)
+mae_scores <- c(mae_scores, mae)
+}
+
+return(list(mse = mean(mse_scores), mae = mean(mae_scores)))
 }
 
 # Define the GARCH model function
 garch_model <- function(data) {
-  spec <- ugarchspec(variance.model = list(model = "sGARCH", garchOrder = c(1, 1)),
-                     mean.model = list(armaOrder = c(0, 0)))
-  model <- ugarchfit(spec, data)
-  return(model)
+spec <- ugarchspec(variance.model = list(model = "sGARCH", garchOrder = c(1, 1)),
+              mean.model = list(armaOrder = c(0, 0)))
+model <- ugarchfit(spec, data)
+return(model)
 }
 
 # Perform time series cross-validation
@@ -722,7 +729,7 @@ cat("MAE:", mean(abs(full_model@fit$residuals)), "\n")
 
 Excercise 11: Comparing Forecast Models
 
-```R
+```{r}
 library(quantmod)
 library(forecast)
 library(prophet)
@@ -734,54 +741,54 @@ monthly_sales <- to.monthly(sales_data)[,4]
 
 # Function to perform rolling window cross-validation
 rolling_cv <- function(data, n_splits, model_func) {
-  n <- length(data)
-  split_size <- floor(n / n_splits)
-  
-  mae_scores <- c()
-  rmse_scores <- c()
-  mape_scores <- c()
-  
-  for (i in 1:(n_splits - 1)) {
-    train_start <- (i - 1) * split_size + 1
-    train_end <- i * split_size
-    test_start <- train_end + 1
-    test_end <- min(test_start + split_size - 1, n)
-    
-    train_data <- data[train_start:train_end]
-    test_data <- data[test_start:test_end]
-    
-    model <- model_func(train_data)
-    predictions <- forecast(model, h = length(test_data))
-    
-    mae <- mae(test_data, predictions$mean)
-    rmse <- rmse(test_data, predictions$mean)
-    mape <- mape(test_data, predictions$mean)
-    
-    mae_scores <- c(mae_scores, mae)
-    rmse_scores <- c(rmse_scores, rmse)
-    mape_scores <- c(mape_scores, mape)
-  }
-  
-  return(list(mae = mean(mae_scores), rmse = mean(rmse_scores), mape = mean(mape_scores)))
+n <- length(data)
+split_size <- floor(n / n_splits)
+
+mae_scores <- c()
+rmse_scores <- c()
+mape_scores <- c()
+
+for (i in 1:(n_splits - 1)) {
+train_start <- (i - 1) * split_size + 1
+train_end <- i * split_size
+test_start <- train_end + 1
+test_end <- min(test_start + split_size - 1, n)
+
+train_data <- data[train_start:train_end]
+test_data <- data[test_start:test_end]
+
+model <- model_func(train_data)
+predictions <- forecast(model, h = length(test_data))
+
+mae <- mae(test_data, predictions$mean)
+rmse <- rmse(test_data, predictions$mean)
+mape <- mape(test_data, predictions$mean)
+
+mae_scores <- c(mae_scores, mae)
+rmse_scores <- c(rmse_scores, rmse)
+mape_scores <- c(mape_scores, mape)
+}
+
+return(list(mae = mean(mae_scores), rmse = mean(rmse_scores), mape = mean(mape_scores)))
 }
 
 # ARIMA model function
 arima_model <- function(data) {
-  model <- auto.arima(data)
-  return(model)
+model <- auto.arima(data)
+return(model)
 }
 
 # ETS model function
 ets_model <- function(data) {
-  model <- ets(data)
-  return(model)
+model <- ets(data)
+return(model)
 }
 
 # Prophet model function
 prophet_model <- function(data) {
-  df <- data.frame(ds = as.Date(time(data)), y = as.numeric(data))
-  model <- prophet(df)
-  return(model)
+df <- data.frame(ds = as.Date(time(data)), y = as.numeric(data))
+model <- prophet(df)
+return(model)
 }
 
 # Perform rolling window cross-validation for each model
@@ -814,7 +821,7 @@ cat("ETS vs Prophet: p-value =", dm_test_ets_prophet$p.value, "\n")
 
 Excercise 11: Tuning Hyperparameters with Cross-Validation
 
-```R
+```{R}
 library(quantmod)
 library(forecast)
 
@@ -824,49 +831,49 @@ monthly_sales <- to.monthly(sales_data)[,4]
 
 # Function to perform time series cross-validation
 ts_cv <- function(data, n_splits, model_func, ...) {
-  n <- length(data)
-  split_size <- floor(n / n_splits)
-  
-  mse_scores <- c()
-  
-  for (i in 1:(n_splits - 1)) {
-    train_start <- (i - 1) * split_size + 1
-    train_end <- i * split_size
-    test_start <- train_end + 1
-    test_end <- min(test_start + split_size - 1, n)
-    
-    train_data <- data[train_start:train_end]
-    test_data <- data[test_start:test_end]
-    
-    model <- model_func(train_data, ...)
-    predictions <- forecast(model, h = length(test_data))
-    
-    mse <- mean((test_data - predictions$mean)^2)
-    mse_scores <- c(mse_scores, mse)
-  }
-  
-  return(mean(mse_scores))
+n <- length(data)
+split_size <- floor(n / n_splits)
+
+mse_scores <- c()
+
+for (i in 1:(n_splits - 1)) {
+train_start <- (i - 1) * split_size + 1
+train_end <- i * split_size
+test_start <- train_end + 1
+test_end <- min(test_start + split_size - 1, n)
+
+train_data <- data[train_start:train_end]
+test_data <- data[test_start:test_end]
+
+model <- model_func(train_data, ...)
+predictions <- forecast(model, h = length(test_data))
+
+mse <- mean((test_data - predictions$mean)^2)
+mse_scores <- c(mse_scores, mse)
+}
+
+return(mean(mse_scores))
 }
 
 # Grid search function
 grid_search <- function(data, p_values, d_values, q_values) {
-  best_score <- Inf
-  best_params <- NULL
-  
-  for (p in p_values) {
-    for (d in d_values) {
-      for (q in q_values) {
-        score <- ts_cv(data, n_splits = 5, model_func = arima, order = c(p, d, q))
-        
-        if (score < best_score) {
-          best_score <- score
-          best_params <- c(p, d, q)
-        }
-      }
-    }
-  }
-  
-  return(list(best_params = best_params, best_score = best_score))
+best_score <- Inf
+best_params <- NULL
+
+for (p in p_values) {
+for (d in d_values) {
+for (q in q_values) {
+score <- ts_cv(data, n_splits = 5, model_func = arima, order = c(p, d, q))
+
+if (score < best_score) {
+  best_score <- score
+  best_params <- c(p, d, q)
+}
+}
+}
+}
+
+return(list(best_params = best_params, best_score = best_score))
 }
 
 # Define the range of hyperparameters

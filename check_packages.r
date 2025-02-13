@@ -3,7 +3,7 @@ required_packages <- c(
   'tidyverse',      # includes ggplot2, dplyr, tidyr, etc.
   'tidyquant', 
   'quantmod', 
-  'PerformanceAnalytics', 
+  'PortfolioAnalytics', 
   'timetk', 
   'lubridate',
   'scales', 
@@ -20,7 +20,8 @@ required_packages <- c(
   'sandwich',
   'dlm',
   'signal',
-  'dagitty'
+  'dagitty',
+  'caret'
 )
 
 # Set CRAN mirror

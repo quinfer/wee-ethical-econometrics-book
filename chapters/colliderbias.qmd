@@ -1,6 +1,7 @@
 ---
 title: "Causal Salad, Endogeneity and collider bias"
 author: "Barry Quinn"
+embed-resources: true
 editor: visual
 ---
 

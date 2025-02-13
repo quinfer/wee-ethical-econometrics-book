@@ -1,5 +1,6 @@
 ---
 title: "Advanced Financial Data Analytics Academic Integrity Policy"
+embed-resources: true
 editor: visual
 css: style.css
 ---
@@ -67,7 +68,6 @@ We are committed to fostering an environment where academic integrity thrives.
 By enrolling in this course, you acknowledge and agree to uphold this academic integrity policy.
 
 ## TL;DR
-
 
 ```{mermaid}
 graph TD

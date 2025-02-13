@@ -3,7 +3,8 @@ title: "Financial times series econometrics"
 author: "Barry Quinn"
 editor: visual
 date: today
-bibliography: references.bib
+embed-resources: true
+bibliography: ../references.bib
 execute:
   message: false
   warning: false

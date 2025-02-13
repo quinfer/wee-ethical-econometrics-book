@@ -4,6 +4,7 @@ author: "Barry Quinn"
 editor: visual
 date: today
 bibliography: references.bib
+embed-resources: true
 ---
 
 # Embracing Complexity {.unnumbered}

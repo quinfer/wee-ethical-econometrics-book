@@ -2,12 +2,12 @@
 title: "resources"
 author: "Barry Quinn"
 editor: visual
-css: style.css
+embed-resources: true
 ---
 
 ## The TSFE R package
 
-<img src="images/rw_hex.png" width="20%"/>
+<img src="/images/rw_hex.png" width="20%"/>
 
 [![DOI](https://zenodo.org/badge/342634123.svg)](https://zenodo.org/badge/latestdoi/342634123)
 
@@ -84,34 +84,50 @@ This package also includes dataset used in the course
 
 ## Course Slide Decks
 
-<div class="iframe-container">
-<iframe src="https://advanced-financial-data-analytics.github.io/Introduction/" width="800" height="600"></iframe>
-</div>
+::: iframe-container
+<iframe src="https://advanced-financial-data-analytics.github.io/Introduction/" width="800" height="600">
 
-<div class="iframe-container">
-<iframe src="https://advanced-financial-data-analytics.github.io/statistics-primer/" width="800" height="600"></iframe>
-</div>
+</iframe>
+:::
 
-<div class="iframe-container">
-<iframe src="https://advanced-financial-data-analytics.github.io/prediction-toolkit/" width="800" height="600"></iframe>
-</div>
+::: iframe-container
+<iframe src="https://advanced-financial-data-analytics.github.io/statistics-primer/" width="800" height="600">
 
-<div class="iframe-container">
-<iframe src="https://advanced-financial-data-analytics.github.io/computational-notebooks/" width="800" height="600"></iframe>
-</div>
+</iframe>
+:::
 
-<div class="iframe-container">
-<iframe src="https://advanced-financial-data-analytics.github.io/asset-returns/" width="800" height="600"></iframe>
-</div>
+::: iframe-container
+<iframe src="https://advanced-financial-data-analytics.github.io/prediction-toolkit/" width="800" height="600">
 
-<div class="iframe-container">
-<iframe src="https://advanced-financial-data-analytics.github.io/exploring-data/" width="800" height="600"></iframe>
-</div>
+</iframe>
+:::
 
-<div class="iframe-container">
-<iframe src="https://advanced-financial-data-analytics.github.io/time-series-models/" width="800" height="600"></iframe>
-</div>
+::: iframe-container
+<iframe src="https://advanced-financial-data-analytics.github.io/computational-notebooks/" width="800" height="600">
 
-<div class="iframe-container">
-<iframe src="https://advanced-financial-data-analytics.github.io/advanced-time-series-models/" width="800" height="600"></iframe>
-</div>
+</iframe>
+:::
+
+::: iframe-container
+<iframe src="https://advanced-financial-data-analytics.github.io/asset-returns/" width="800" height="600">
+
+</iframe>
+:::
+
+::: iframe-container
+<iframe src="https://advanced-financial-data-analytics.github.io/exploring-data/" width="800" height="600">
+
+</iframe>
+:::
+
+::: iframe-container
+<iframe src="https://advanced-financial-data-analytics.github.io/time-series-models/" width="800" height="600">
+
+</iframe>
+:::
+
+::: iframe-container
+<iframe src="https://advanced-financial-data-analytics.github.io/advanced-time-series-models/" width="800" height="600">
+
+</iframe>
+:::

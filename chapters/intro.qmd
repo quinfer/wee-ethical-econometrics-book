@@ -2,6 +2,7 @@
 title: "Introduction"
 author: "Barry Quinn"
 editor: visual
+embed-resources: true
 ---
 
 ## Introduction
